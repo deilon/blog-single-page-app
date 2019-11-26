@@ -1,0 +1,40 @@
+<!-- Cover -->
+<section>
+    <div class="cover" [style.background-image]="'url(' + blog.imagePath + ')'">
+        <div class="container">
+            <div class="cover-content">
+                <div class="title">
+                    <h1>{{ blog.title }}</h1>
+                    <p>{{ blog.description }}</p>
+                </div>
+                <a *ngIf="isIndex" [routerLink]="['/blog', blog.id, 'read']">READ MORE</a>
+            </div>
+       
+            <div *ngIf="!isIndex" class="cover-blog-tags">
+                <span class="badge badge-secondary">Technology</span>
+                <span class="badge badge-secondary">Personal Growth</span>
+            </div>
+
+            <div *ngIf="!isIndex" class="cover-blog-info">
+                <div class="cover-blog-user">
+                    <div class="cover-blog-user-img" [style.background-image]="'url('+user.photo+')'"></div>
+                    <div class="cover-blog-user-name"><a [routerLink]="['/user', user.id]">{{ user.name }}</a></div>
+                </div>
+                <div class="cover-blog-metrics">
+                    <ul>
+                        <li>Sept 17, 2019</li>
+                        <li>76 Likes</li>
+                        <li>409 Visits</li>
+                    </ul>
+                </div>
+            </div>
+
+            <ol *ngIf="isIndex" class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+            </ol>
+          
+        </div>
+    </div>
+</section>

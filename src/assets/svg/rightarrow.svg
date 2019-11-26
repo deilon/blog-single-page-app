@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="31.604456635680407" width="58.37609474591585">
+  <defs>
+    <path id="path-1" opacity="1" fill-rule="evenodd" d="M9.651151259056576,22.021236567139724 L9.651151259056576,9.58322006854064 L21.949867240681954,9.58322006854064 "/>
+    <path id="path-2" opacity="1" fill-rule="evenodd" d="M7.200144561754513,15.692084729483213 L51.319149581698156,15.692084729483213 "/>
+  </defs>
+  <g transform="translate(29.188047372957925, 15.802228317840175) scale(-1, 1) translate(-29.188047372957925, -15.802228317840175)" opacity="1">
+    <g transform="translate(15.800509249869265, 15.802228317840182) rotate(316.00011299027676) translate(-15.800509249869265, -15.802228317840182)" opacity="1">
+      <use xlink:href="#path-1" fill-opacity="0" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/>
+    </g>
+    <g opacity="1">
+      <use xlink:href="#path-2" fill-opacity="0" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/>
+    </g>
+  </g>
+</svg>

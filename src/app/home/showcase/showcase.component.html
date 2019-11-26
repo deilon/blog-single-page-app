@@ -1,0 +1,60 @@
+<section>
+    <div class="showcase-wrap">
+        <div class="showcase">
+            <div class="showcase-slider">
+
+                <div *ngFor="let blog of blogs; let i = index" class="showcase-item" [style.margin-left]="0 == i ? '90px' : null">
+                    <div class="showcase-img" [style.background-image]="'url(' + blog.imagePath + ')'"></div>
+                    <div class="showcase-detail">
+                        <div class="showcase-caption">
+                            <h2>{{ blog.title }}</h2>
+                            <p>What keeps you up at night? Pondering deep questions? Excitement about a big trip? 
+                                Or is it stress about unfinished work, an upcoming test, or a dreaded family gathering? 
+                                For many people, this stress is temporary, as its cause is quickly resolved. But what if 
+                                the very thing keeping you awake was stress about losing sleep? This seemingly unsolvable 
+                                loop is at the heart of insomnia, the world’s most common sleep disorder. </p>
+                        </div>
+    
+                        <a [routerLink]="['/blog/'+blog.id+'/read']">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-controls clearfix">
+                <a href="#">Browse all</a>
+                <div class="showcase-prevnext float-right">
+                    <a href="#" id="prevSlide"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="31.604456635680407" width="58.37609474591585">
+                        <defs>
+                          <path id="path-1" opacity="1" fill-rule="evenodd" d="M9.651151259056576,22.021236567139724 L9.651151259056576,9.58322006854064 L21.949867240681954,9.58322006854064 "/>
+                          <path id="path-2" opacity="1" fill-rule="evenodd" d="M7.200144561754513,15.692084729483213 L51.319149581698156,15.692084729483213 "/>
+                        </defs>
+                        <g opacity="1">
+                          <g transform="translate(15.800509249869265, 15.802228317840182) rotate(316.00011299027676) translate(-15.800509249869265, -15.802228317840182)" opacity="1">
+                            <use xlink:href="#path-1" fill-opacity="0" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/>
+                          </g>
+                          <g opacity="1">
+                            <use xlink:href="#path-2" fill-opacity="0" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/>
+                          </g>
+                        </g>
+                      </svg></a>
+                      <a href="#" id="nextSlide">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="31.604456635680407" width="58.37609474591585">
+                            <defs>
+                              <path id="path-1" opacity="1" fill-rule="evenodd" d="M9.651151259056576,22.021236567139724 L9.651151259056576,9.58322006854064 L21.949867240681954,9.58322006854064 "/>
+                              <path id="path-2" opacity="1" fill-rule="evenodd" d="M7.200144561754513,15.692084729483213 L51.319149581698156,15.692084729483213 "/>
+                            </defs>
+                            <g transform="translate(29.188047372957925, 15.802228317840175) scale(-1, 1) translate(-29.188047372957925, -15.802228317840175)" opacity="1">
+                              <g transform="translate(15.800509249869265, 15.802228317840182) rotate(316.00011299027676) translate(-15.800509249869265, -15.802228317840182)" opacity="1">
+                                <use xlink:href="#path-1" fill-opacity="0" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/>
+                              </g>
+                              <g opacity="1">
+                                <use xlink:href="#path-2" fill-opacity="0" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/>
+                              </g>
+                            </g>
+                          </svg>
+                      </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

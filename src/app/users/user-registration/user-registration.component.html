@@ -1,0 +1,56 @@
+<div class="user-reg">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="user-reg-content">
+                    <h1>USER REGISTRATION | QUIRE</h1>
+                    <div class="user-reg-form">
+                        <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+                            <div formGroupName="nameGroup">
+                                <div class="reg-fullname">
+                                    <input type="text" id="fullname" spellcheck="false" placeholder="Full name" formControlName="fullname">
+                                    <span class="form-text text-muted" *ngIf="!regForm.get('nameGroup.fullname').valid && regForm.get('nameGroup.fullname').touched">
+                                        Your name must only contain Letters and spaces
+                                    </span>  
+                                </div>
+                                <div class="reg-username">
+                                    <input type="text" id="username" spellcheck="false" placeholder="Username" formControlName="username">
+                                    <span class="form-text text-muted" *ngIf="!regForm.get('nameGroup.username').valid && regForm.get('nameGroup.username').touched">
+                                        Your username must only contain Letters, numbers, period and underscore
+                                    </span>            
+                                </div>
+                            </div>
+
+                            <div formGroupName="passwordGroup">
+                                <div class="reg-password">
+                                    <input type="password" id="password" spellcheck="false" placeholder="Password" formControlName="password">
+                                    <span class="form-text text-muted" *ngIf="!regForm.get('passwordGroup.password').valid && regForm.get('passwordGroup.password').touched">
+                                        Your password must not contain spaces and atleast 8 characters length and not exceeding to 30 characters
+                                    </span>
+                                </div>
+                                <div class="reg-password-confirm">
+                                    <input type="password" id="confirmationPassword" spellcheck="false" placeholder="Confirm password" formControlName="confirmationPassword">
+                                    <span class="form-text text-muted" *ngIf="!regForm.get('passwordGroup.confirmationPassword').valid && regForm.get('passwordGroup.confirmationPassword').touched">
+                                        Password did not matched
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-3"  *ngIf="(regForm.get('nameGroup.fullname').errors?.required 
+                            || regForm.get('nameGroup.username').errors?.required
+                            || regForm.get('passwordGroup.password').errors?.required
+                            || regForm.get('passwordGroup.confirmationPassword').errors?.required )
+                            && submitted">
+                                    <span class="form-text text-muted">
+                                        Please fill all the required field.
+                                    </span>
+                            </div>
+                            <div class="reg-submit">
+                                <button class="btn btn-secondary" type="submit">REGISTER</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

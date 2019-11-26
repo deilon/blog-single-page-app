@@ -1,0 +1,42 @@
+import { Subject } from 'rxjs';
+import { User } from './user.model';
+
+export class UserService {
+
+    constructor() { }
+
+    usersChanged = new Subject<User[]>();
+
+    private users: User[] = [
+      new User(0, 'jennigritters', 'password', 'Jenni Gritters', 'www.jennigritters.com', 'Web Developer/Designer',
+                '+639182132918', 'female', '../../assets/images/users/user.jpeg'),
+      new User(1, 'sammy', 'password', 'Sammy Sarmiento', 'www.sammysarmiento.com', 'Film Director',
+                '+639182132918', 'female', '../../assets/images/users/user.jpeg')
+    ];
+
+    getUser(index: number) {
+      return this.users[index];
+    }
+
+    // get all usernames
+    getUsernames() {
+      return this.users.map(x => x.username);
+    }
+
+    // get last user object in array and get it's id
+    getUserLastId() {
+      return this.users[this.users.length-1].id;
+    }
+
+    getLastUser() {
+      return this.users[this.users.length-1];
+    }
+
+    addUser(user: User) {
+      this.users.push(user);
+      this.usersChanged.next(this.users.slice());
+    }
+
+}
+
+

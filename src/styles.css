@@ -1,0 +1,650 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a:hover {
+    text-decoration: none;
+    color: #F1F1F1;
+}
+
+
+body {
+    background: #f1f1f1;
+}
+
+/* ========================================================
+   Global 
+   ======================================================== */
+.line-separator-light {
+    height: 1px;
+    border-top: 1px solid #FFF;
+    width: 100%;
+}
+
+/* ========================================================
+   Navigation 
+   ======================================================== */
+.top-navigation {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    position: absolute;
+    width: 100%;
+}
+.brand {
+    font-family: 'nooa semiserif';
+    font-size: 25px;
+    color: #F1F1F1;
+    letter-spacing: 5px;
+}
+.nav-list {
+    margin-top: 3px;
+    float: right;
+}
+.nav-list ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.nav-list ul li a {
+    font-family: 'nooa semiserif';
+    font-size: 19px;
+    color: #F1F1F1;
+    letter-spacing: 3px;
+}
+
+
+/* ========================================================
+   Cover
+   ======================================================== */
+.cover {
+    padding-top: 400px;
+    padding-bottom: 10px;
+    /* background-image: url('./assets/images/nerd.jpg'); */
+    /* background-color: #6F7072; */
+    background-position: center center;
+    background-size: cover;
+    z-index: -1;
+}
+.cover-content {
+    /* background: #5A81A8; */
+}
+.title {
+    line-height: 1.5;
+}
+.title h1 {
+    font-family: 'nooa semiserif';
+    font-size: 45px;
+    letter-spacing: 10px;
+    color: #F1F1F1;
+}
+.title p {
+    font-family: 'montserrat light';
+    font-size: 20px;
+    color: #F1F1F1;
+    letter-spacing: 1px;
+}
+.cover .container a {
+    font-family: 'montserrat semibold';
+    font-size: 14px;
+    color: #F1F1F1;
+    display: inline-block;
+    margin-top: 50px;
+}
+.carousel-indicators {
+    position: relative;
+    right: 0;
+    left: 0;
+    bottom: 20px;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+}
+.carousel-indicators li {
+    position: relative;
+    flex: 0 1 auto;
+    width: 40px;
+    height: 5px;
+    margin-right: 15px;
+    margin-left: 3px;
+    text-indent: -999px;
+    background-color: hsla(0,0%,100%,.5)
+}
+.cover-blog-tags {
+    margin-top: 20px;
+}
+.cover-blog-tags .badge {
+    font-family: montserrat;
+    padding: 7px 15px;
+    margin-right: 10px;
+}
+.cover-blog-info {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 15px;
+}
+.cover-blog-user {
+    display: inline-block;
+    margin-right: 20px;
+}
+.cover-blog-user-img {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.cover-blog-user-name {
+    display: inline;
+    margin-left: 20px;
+    font-family: montserrat;
+    color: #F1F1F1;
+}
+.cover-blog-metrics {
+    display: inline-block;
+}
+.cover-blog-metrics ul li {
+    font-family: montserrat;
+    display: inline-block;
+    margin-right: 20px;
+    color: #F1F1F1;
+}
+
+
+
+
+/* ========================================================
+   About (short)
+   ======================================================== */
+.about-short {
+    background-color: #E1E1EA;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.about-short p {
+    font-family: 'montserrat semibold';
+    font-size: 14px;
+    color: #4F4F4F;
+    letter-spacing: 1px;
+    line-height: 2; 
+
+}
+.about-short p a {
+    font-family: 'montserrat semibold';
+    font-weight: bold;
+    color: #5A81A8;
+}
+
+
+/* ========================================================
+   Selection
+   ======================================================== */
+.selection-content {
+    height: 570px;
+}
+.tech {
+    position: relative;
+    background-image: url('./assets/images/capacitors-chips-circuit-board-2582937.jpg');
+    /* background-color: #FFCD40; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 40px;
+    padding-left: 50px;
+}
+.personal-growth {
+    position: relative;
+    background-image: url('./assets/images/address-adult-african-1061576.jpg');
+    /* background-color: #F2CA92; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.business {
+    position: relative;
+    background-image: url('./assets/images/aerial-photography-aerial-shot-aerial-view-2539076.jpg');
+    /* background-color: #4A4B4C; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.health {
+    position: relative;
+    background-image: url('./assets/images/activity-adults-athletes-1855269.jpg');
+    /* background-color: #D5E4FE; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.science {
+    position: relative;
+    background-image: url('./assets/images/cell-human-science-45239.jpg');
+    /* background-color: #428C47; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.overlay {
+    background-color: rgba(200, 200, 200, 73%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.tech, .selection-right {
+    width: 100%;
+}
+@media only screen and (min-width: 1199px) {
+    .tech {
+        width: 40%;
+    }
+    .selection-right {
+        width: 60%;
+    }
+    .selection-right .row {
+        height: 50%;
+    }
+} 
+
+.selection-detail {
+    position: absolute;
+    top: none;
+    bottom: 30px;
+    left: 20px;
+}
+.selection-detail h2 {
+    font-family: 'montserrat extrabold';
+    font-size: 19px;
+    color: #fff;
+    letter-spacing: 3px;
+}
+.selection-detail p {
+    font-family: 'montserrat medium';
+    font-size: 15px;
+    color: #fff;
+    margin-top: 5px;
+    letter-spacing: 3px;
+}
+
+/* ========================================================
+   Showcase
+   ======================================================== */
+.showcase-wrap {
+    background: #333;
+}
+.showcase {
+    padding-top: 65px;
+    padding-bottom: 50px !important;
+    /* width: 100%;
+    white-space: nowrap; */
+    height: auto !important;
+}
+.showcase-item {
+    width: 450px !important;
+    height: 500px !important;
+    background: #f2f2f2;
+    border-radius: 6px;
+    /* float: none !important;
+    display: inline-block !important; */
+}
+.showcase-img {
+    background-size: cover;
+    background-position: center center;
+    
+    height: 295px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.showcase-detail {
+    padding: 30px 20px;
+}
+.showcase-caption {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.8em;
+    max-height: 120px;
+    display: block;
+}
+.showcase-detail h2 {
+    font-family: 'nooa semiserif';
+    font-size: 19px;
+    color: #333;
+    letter-spacing: 2px;
+    line-height: 1.3;
+}
+.showcase-detail p {
+    font-family: montserrat;
+    font-size: 14px;
+    color: #333;
+    margin-top: 13px;
+}
+
+.showcase-detail a {
+    font-family: montserrat;
+    font-weight: bold;
+    font-size: 12px;
+    color: #548198;
+    display: block;
+    margin-top: 15px;
+}
+.showcase-controls {
+    margin-top: 30px;
+}
+.showcase-controls a {
+    font-family: montserrat;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    color: #FFF;
+    float: left;
+    margin-left: 90px;
+    line-height: 2.3;
+}
+.showcase-prevnext {
+    margin-right: 95px;
+}
+.showcase-prevnext a {
+    display: block;
+    float: left;
+    margin-left: 50px;
+}
+
+
+/* ========================================================
+   Shopping
+   ======================================================== */
+.shopping {
+    position: relative;
+    background: #151b1b;
+    height: 820px;
+    z-index: -2;
+}
+.shopping img {
+    height: 900px;
+    width: auto;
+}
+.shopping-img-outer {
+    position: relative;
+    top: -320px;
+    /* left: 150px; */
+    width: 100%;
+}
+.shopping-img-outer p {
+    font-family: 'montserrat medium';
+    font-size: 16px;
+    color: rgba(242, 242, 242, 57%);
+    letter-spacing: 2px;
+
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.shoppingimg {
+    width: 100%;
+    background: #F2F2F2;
+    z-index: -1;
+    height: 899px;
+}
+.shop-details {
+    position: absolute;
+    top: 230px;
+    left: 600px;
+    width: 650px;
+    background: #FFF;
+    padding-top: 55px;
+    padding-bottom: 25px;
+    padding-right: 40px;
+    padding-left: 40px;
+    z-index: 1;
+}
+.shop-details h2 {
+    font-family: 'nooa semiserif';
+    font-size: 27px;
+    color: #4F4F4F;
+    margin-bottom: 30px;
+}
+.shop-details p {
+    line-height: 1.8;
+}
+.shop-details-footer {
+    margin-top: 30px;
+}
+.shop-details-footer p {
+    font-family: 'nooa semiserif';
+    font-size: 60px;
+    color: #5A81A8;
+
+    float: left;
+}
+.shop-details-footer a {
+    font-family: 'montserrat medium';
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #FFF;
+
+    border-radius: 4px;
+    padding: 20px 40px;;
+    float: right;
+    margin-top: 30px;
+    display: block;
+    background: #5A81A8;
+}
+
+/* ========================================================
+   Read
+   ======================================================== */
+.read {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.blog-content p {
+    font-family: montserrat;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* ========================================================
+   User Profile
+   ======================================================== */
+.user-profile-nav {
+    background-color: #C8C8C8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.user-profile-avatar {
+    width: 35px;
+    height: 35px;
+    background: #f1f1f1;
+    margin-left: auto;
+}
+.user-profile-container {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.user-profile-view-top {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #c8c8c8;
+    font-family: montserrat;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.user-profile-image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin: 0 auto;
+}
+.user-profile-name {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.user-profile-bio {
+    margin-bottom: 15px;
+}
+.user-profile-website a {
+    color: #5A81A8;
+}
+.user-profile-bottom {
+    font-family: montserrat;
+    font-size: 13px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #c8c8c8;
+}
+.tag-badges {
+    padding-top: 10px;
+}
+.tag-badges .badge {
+    padding: 10px;
+    margin: 5px;
+}
+.user-blog {
+    background: #C8C8C8;
+    margin-bottom: 30px;
+}
+.user-blog-photo {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: auto;
+}
+.user-blog-details {
+    padding: 15px;
+    font-family: montserrat;
+}
+.user-blog-title {
+    font-size: 18px;
+    font-family: 'montserrat semibold';
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+.user-blog-short-description {
+    height: 90px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+.user-blog-read {
+    font-family: 'montserrat semibold';
+    font-size: 14px;
+}
+.user-blog-read a {
+    color: #5A81A8;
+}
+
+
+/* ========================================================
+   User Registration
+   ======================================================== */
+.user-reg {
+    padding-top: 50px;
+}
+.user-reg-content h1 {
+    font-family: 'montserrat light';
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+.user-reg-content {
+    margin: 0 auto;
+    width: fit-content;
+}
+.user-reg-content form input {
+    color: #193441;
+    height: 40px;
+    width: 100%;
+    font-size: 12px;
+    font-family: montserrat;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    
+}
+.user-reg-content form input:focus {
+    outline: 0;
+}
+.user-reg-content form input::placeholder {
+    color: #B3B3B3;
+}
+.user-reg-content form div[class*="reg-"] {
+    margin-bottom: 25px;
+}
+.user-reg-form {
+    background: lightgray;
+    padding: 30px;
+    width: 400px;
+    margin: 0 auto;
+}
+.reg-submit button {
+    width: 100%;
+    font-family: 'montserrat semibold';
+    font-size: 14px;
+}
+.user-reg-content .form-text {
+    margin-top: 10px;
+    font-family: 'montserrat medium';
+    font-size: 12px;
+    line-height: 1.4;
+    color: #D92938 !important;
+}
