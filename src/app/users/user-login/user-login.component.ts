@@ -5,7 +5,6 @@ import { UserService } from '../user.service';
 import { Observable } from 'rxjs';
 import { User } from '../user.model';
 import { Router } from '@angular/router';
-import { NullTemplateVisitor } from '@angular/compiler';
 
 @Component({
   selector: 'app-user-login',
@@ -24,8 +23,8 @@ export class UserLoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      'username': [null, [Validators.required], this.userFound.bind(this) ],
-      'password': [null, [Validators.required], this.passwordMatch.bind(this)]
+      'username': [null, Validators.required, this.userFound.bind(this) ],
+      'password': [null, Validators.required, this.passwordMatch.bind(this)]
     });
   }
 
@@ -68,6 +67,7 @@ export class UserLoginComponent implements OnInit {
         }, 1500);
       });
       return promise;
+      
     } else {
       const promise = new Promise<any>((resolve, reject) => {
         setTimeout(() => {
@@ -75,6 +75,7 @@ export class UserLoginComponent implements OnInit {
         }, 1500);
       });      
       return promise;
+
     }
   }
 
