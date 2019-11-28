@@ -27,6 +27,7 @@ import { AuthService } from './auth.service';
 import { UserService } from './users/user.service';
 import { AboutComponent } from './home/about/about.component';
 import { UserRegistrationComponent } from './users/user-registration/user-registration.component';
+import { UserLoginComponent } from './users/user-login/user-login.component';
 
 @NgModule({
    declarations: [
@@ -44,7 +45,8 @@ import { UserRegistrationComponent } from './users/user-registration/user-regist
       UsersComponent,
       UserProfileComponent,
       AboutComponent,
-      UserRegistrationComponent
+      UserRegistrationComponent,
+      UserLoginComponent
    ],
    imports: [
       BrowserModule,
