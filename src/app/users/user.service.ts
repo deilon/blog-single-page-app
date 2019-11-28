@@ -10,12 +10,20 @@ export class UserService {
     private users: User[] = [
       new User(0, 'jennigritters', 'password', 'Jenni Gritters', 'www.jennigritters.com', 'Web Developer/Designer',
                 '+639182132918', 'female', '../../assets/images/users/user.jpeg'),
-      new User(1, 'sammy', 'password', 'Sammy Sarmiento', 'www.sammysarmiento.com', 'Film Director',
+      new User(1, 'sammy', 'sampass', 'Sammy Sarmiento', 'www.sammysarmiento.com', 'Film Director',
                 '+639182132918', 'female', '../../assets/images/users/user.jpeg')
     ];
 
     getUser(index: number) {
       return this.users[index];
+    }
+
+    getUserByUsername(index: string) {
+      for (let user of this.users) {
+        if (user.username === index) {
+          return user;
+        }
+      }
     }
 
     // get all usernames
