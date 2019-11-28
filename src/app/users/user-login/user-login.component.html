@@ -1,9 +1,21 @@
 <div class="user-login">
     <div class="container">
         <div class="row">
-            <form [formGroup]="loginForm">
-                <input type="text" placeholder="username" formControlName="username">
-                <input type="password" placeholder="password" formControlName="password">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <input type="text" spellcheck="false" placeholder="username" formControlName="username">
+                    <span class="form-text text-muted" *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">
+                        <span class="form-text text-muted" *ngIf="loginForm.get('username').errors?.required">Username is required</span>
+                        <span class="form-text text-muted" *ngIf="loginForm.get('username').errors?.userNotFound">The user not found</span>
+                    </span>
+                </div>
+                <div>
+                    <input type="password" spellcheck="false" placeholder="password" formControlName="password">
+                    <span class="form-text text-muted" *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+                        <span class="form-text text-muted" *ngIf="loginForm.get('password').errors?.required">Password is required</span>
+                        <span class="form-text text-muted" *ngIf="loginForm.get('password').errors?.passwordIncorrect">Password is incorrect</span>
+                    </span>
+                </div>
                 <button class="btn btn-primary" type="submit">Login</button>
             </form>
         </div>
