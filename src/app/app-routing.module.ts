@@ -7,6 +7,7 @@ import { ReadComponent } from './blog/read/read.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { UserRegistrationComponent } from './users/user-registration/user-registration.component';
+import { UserLoginComponent } from './users/user-login/user-login.component';
 
 // import { AuthGuard } from './auth-guard.service';
 
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
         { path: ':id/read', component: ReadComponent }
     ] },
     { path: 'signup', component: UserRegistrationComponent },
+    { path: 'login', component: UserLoginComponent },
     { path: 'user/:id', component: UserProfileComponent },
     { path: 'page-not-found', component: NotFoundComponent },
     { path: '**', redirectTo: 'page-not-found' }
