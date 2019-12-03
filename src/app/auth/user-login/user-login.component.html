@@ -4,18 +4,15 @@
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div>
                     <input type="text" spellcheck="false" placeholder="username" formControlName="username">
-                    <span class="form-text text-muted" *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">
+                    <span class="form-text text-muted" *ngIf="!loginForm.get('username').valid && submitted">
                         <span class="form-text text-muted" *ngIf="loginForm.get('username').errors?.required">Username is required</span>
-<<<<<<< HEAD
                         <span class="form-text text-muted" *ngIf="loginForm.get('username').errors?.userNotFound">The user does not belong to any account</span>
-=======
-                        <span class="form-text text-muted" *ngIf="loginForm.get('username').errors?.userNotFound">The user not found</span>
->>>>>>> master
+
                     </span>
                 </div>
                 <div>
                     <input type="password" spellcheck="false" placeholder="password" formControlName="password">
-                    <span class="form-text text-muted" *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+                    <span class="form-text text-muted" *ngIf="!loginForm.get('password').valid && submitted">
                         <span class="form-text text-muted" *ngIf="loginForm.get('password').errors?.required">Password is required</span>
                         <span class="form-text text-muted" *ngIf="loginForm.get('password').errors?.passwordIncorrect">Password is incorrect</span>
                     </span>

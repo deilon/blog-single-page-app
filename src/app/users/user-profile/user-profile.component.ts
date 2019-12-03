@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+
 import { User } from '../user.model';
 import { Blog } from 'src/app/blog/blog.model';
 import { BlogService } from 'src/app/blog/blog.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -18,22 +19,16 @@ export class UserProfileComponent implements OnInit {
 
   constructor(private userService: UserService,
               private blogService: BlogService,
-              private route: ActivatedRoute,
-              private router: Router) { }
+              private authService: AuthService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(
-      (params: Params) => {
-        this.id = +params['id'];
-        this.user = this.userService.getUser(this.id);
-        this.userBlogs = this.blogService.getUserBlogs(this.id);
-        if (!this.user) {
-          this.router.navigate(['/page-not-found']);
-        }
-      }
-    );
+    let authUser = JSON.parse(localStorage.getItem('authUser'));
+    this.user = this.userService.getUserByUsername(authUser.username);
+    this.userBlogs = this.blogService.getUserBlogs(authUser.id);
   }
 
-
+  logout() {
+    this.authService.logoutUser();
+  }
 
 }

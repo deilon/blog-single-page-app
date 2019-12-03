@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/forms';
 
-import { User } from '../user.model';
-import { UserService } from '../user.service';
+import { User } from '../../users/user.model';
+import { UserService } from '../../users/user.service';
 
 @Component({
   selector: 'app-user-registration',
@@ -23,7 +23,6 @@ export class UserRegistrationComponent implements OnInit {
   ngOnInit() {
 
     this.regForm = this.fb.group({
-
       'nameGroup': this.fb.group({
         'fullname': [null, [Validators.required, Validators.pattern(/^[ A-Za-z]([ A-Za-z]+)*$/)]],
         'username': [null, [Validators.required, 
@@ -34,13 +33,13 @@ export class UserRegistrationComponent implements OnInit {
         'password': [null, [Validators.required, 
           Validators.pattern(/^(?=\D*\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}$/)]],
         'confirmationPassword': [null, Validators.required]
-      }, { validator: this.mustMatch('password', 'confirmationPassword') })
-      
+      }, { validator: this.mustMatch('password', 'confirmationPassword') }) 
     });
 
   }
 
   onSubmit() {
+
     console.log(this.regForm);
     this.submitted = true;
     if (this.regForm.valid) {
@@ -78,7 +77,7 @@ export class UserRegistrationComponent implements OnInit {
             matchingControl.setErrors(null);
         }
     }
-  }
+}
 
   private initUser(): User {
     return new User(

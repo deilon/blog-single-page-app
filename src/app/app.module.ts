@@ -22,12 +22,14 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 
 // Services
 import { BlogService } from './blog/blog.service';
-import { AuthGuard } from './auth-guard.service';
-import { AuthService } from './auth.service';
 import { UserService } from './users/user.service';
 import { AboutComponent } from './home/about/about.component';
-import { UserRegistrationComponent } from './users/user-registration/user-registration.component';
-import { UserLoginComponent } from './users/user-login/user-login.component';
+import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
+import { UserLoginComponent } from './auth/user-login/user-login.component';
+
+// AUTH SERVICES
+import { AuthGuard } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
    declarations: [
