@@ -31,6 +31,7 @@ import { UserLoginComponent } from './auth/user-login/user-login.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { ProfileUpdateComponent } from './users/profile-update/profile-update.component';
+import { ProfileBlogsComponent } from './users/profile-blogs/profile-blogs.component';
 
 @NgModule({
    declarations: [
@@ -50,7 +51,8 @@ import { ProfileUpdateComponent } from './users/profile-update/profile-update.co
       AboutComponent,
       UserRegistrationComponent,
       UserLoginComponent,
-      ProfileUpdateComponent
+      ProfileUpdateComponent,
+      ProfileBlogsComponent
    ],
    imports: [
       BrowserModule,
