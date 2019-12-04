@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/for
 
 import { User } from '../../users/user.model';
 import { UserService } from '../../users/user.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-user-registration',
@@ -14,7 +15,8 @@ export class UserRegistrationComponent implements OnInit {
 
   constructor(private router: Router,
               private fb: FormBuilder,
-              private userService: UserService) { }
+              private userService: UserService,
+              private authService: AuthService) { }
 
   regForm: FormGroup;
   takenUsernames = this.userService.getUsernames();
@@ -39,18 +41,17 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-
     console.log(this.regForm);
     this.submitted = true;
     if (this.regForm.valid) {
+      let username = this.regForm.value.nameGroup.username;
+      let password = this.regForm.value.passwordGroup.password;
       this.userService.addUser(this.initUser());
+      this.authService.loginUser(username, password);
       this.regForm.reset;
-      this.router.navigate(['user', this.userService.getUserLastId()]);
-    } else {
+    } 
       this.regForm.reset;
-      return;
-    }
-    
+      return;    
   }
 
   usernameUnavailable(control: AbstractControl): {[s: string]: boolean} | null {
