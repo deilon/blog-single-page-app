@@ -20,6 +20,7 @@ const appRoutes: Routes = [
         { path: ':id/read', component: ReadComponent }
     ] },
     { path: 'profile', component: UserComponent, canActivateChild: [AuthGuard], children: [
+        { path: '', component: ProfileBlogsComponent },
         { path: 'blogs', component: ProfileBlogsComponent },
         { path: 'update', component: ProfileUpdateComponent }
     ] },
