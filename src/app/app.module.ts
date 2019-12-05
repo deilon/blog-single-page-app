@@ -17,12 +17,13 @@ import { FooterComponent } from './home/footer/footer.component';
 import { BlogComponent } from './blog/blog.component';
 import { ReadComponent } from './blog/read/read.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { UsersComponent } from './users/users.component';
-import { UserProfileComponent } from './users/user-profile/user-profile.component';
+import { UserComponent } from './user/user.component';
+import { ProfileUpdateComponent } from './user/profile-update/profile-update.component';
+import { ProfileBlogsComponent } from './user/profile-blogs/profile-blogs.component';
 
 // Services
 import { BlogService } from './blog/blog.service';
-import { UserService } from './users/user.service';
+import { UserService } from './user/user.service';
 import { AboutComponent } from './home/about/about.component';
 import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
@@ -30,8 +31,6 @@ import { UserLoginComponent } from './auth/user-login/user-login.component';
 // AUTH SERVICES
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
-import { ProfileUpdateComponent } from './users/profile-update/profile-update.component';
-import { ProfileBlogsComponent } from './users/profile-blogs/profile-blogs.component';
 
 @NgModule({
    declarations: [
@@ -46,13 +45,13 @@ import { ProfileBlogsComponent } from './users/profile-blogs/profile-blogs.compo
       ReadComponent,
       HomeComponent,
       NotFoundComponent,
-      UsersComponent,
-      UserProfileComponent,
+      UserComponent,
+      ProfileUpdateComponent,
+      ProfileBlogsComponent,
       AboutComponent,
       UserRegistrationComponent,
       UserLoginComponent,
-      ProfileUpdateComponent,
-      ProfileBlogsComponent
+ 
    ],
    imports: [
       BrowserModule,

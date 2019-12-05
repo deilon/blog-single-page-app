@@ -3,8 +3,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { BlogService } from '../blog.service';
 import { Blog } from '../blog.model';
-import { User } from 'src/app/users/user.model';
-import { UserService } from 'src/app/users/user.service';
+import { User } from 'src/app/user/user.model';
+import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-read',

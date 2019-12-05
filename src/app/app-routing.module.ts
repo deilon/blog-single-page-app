@@ -5,9 +5,11 @@ import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { ReadComponent } from './blog/read/read.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
+import { UserComponent } from './user/user.component';
+import { ProfileBlogsComponent } from './user/profile-blogs/profile-blogs.component';
+import { ProfileUpdateComponent } from './user/profile-update/profile-update.component';
 
 import { AuthGuard } from './auth/auth-guard.service';
 
@@ -17,9 +19,13 @@ const appRoutes: Routes = [
     { path: 'blog', /*canActivateChild: [AuthGuard],*/ component: BlogComponent, children: [
         { path: ':id/read', component: ReadComponent }
     ] },
+    { path: 'profile', component: UserComponent, canActivateChild: [AuthGuard], children: [
+        { path: 'blogs', component: ProfileBlogsComponent },
+        { path: 'update', component: ProfileUpdateComponent }
+    ] },
     { path: 'signup', component: UserRegistrationComponent },
     { path: 'login', component: UserLoginComponent },
-    { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard] },
+
     { path: 'page-not-found', component: NotFoundComponent },
     { path: '**', redirectTo: 'page-not-found' }
 ];
