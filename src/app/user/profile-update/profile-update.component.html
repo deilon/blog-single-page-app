@@ -1,1 +1,28 @@
-<p>profile-update works!</p>
+<div class="row">
+    <div class="col">
+        <form [formGroup]="profileSettings">
+            <div>
+                    <input type="text" name="fullname" placeholder="Name">
+            </div>
+            <div>
+                    <input type="text" name="username" placeholder="Username">
+            </div>
+            <div>
+                    <input type="text" name="website" placeholder="Website">
+            </div>
+            <div>
+                    <textarea name="bio" rows="3"></textarea>
+            </div>
+            <div>
+                    <input type="text" name="phone" placeholder="Phone Number">
+            </div>
+            <div>
+                    <button type="button"><input readonly type="text"></button>
+            </div>
+            <div>
+                    <button type="submit">Save</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
