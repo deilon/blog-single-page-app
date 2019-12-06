@@ -1,24 +1,28 @@
 <div class="row">
     <div class="col">
         <form [formGroup]="profileSettings">
-            <div>
-                    <input type="text" name="fullname" placeholder="Name">
-            </div>
-            <div>
-                    <input type="text" name="username" placeholder="Username">
-            </div>
-            <div>
-                    <input type="text" name="website" placeholder="Website">
-            </div>
-            <div>
-                    <textarea name="bio" rows="3"></textarea>
-            </div>
-            <div>
-                    <input type="text" name="phone" placeholder="Phone Number">
-            </div>
-            <div>
-                    <button type="button"><input readonly type="text"></button>
-            </div>
+                <div formGroupName="basic">
+                        <div>
+                                <input type="text" name="fullname" placeholder="Name" formControlName="fullname">
+                        </div>
+                        <div>
+                                <input type="text" name="username" placeholder="Username" formControlName="username">
+                        </div>
+                        <div>
+                                <input type="text" name="website" placeholder="Website" formControlName="website">
+                        </div>
+                        <div>
+                                <textarea name="bio" rows="3" formControlName="bio"></textarea>
+                        </div>
+                </div>
+                <div formGroupName="private">
+                        <div>
+                                <input type="text" name="phone" placeholder="Phone Number" formControlName="phone">
+                        </div>
+                        <div>
+                                <button type="button"><input readonly type="text" name="gender" formControlName="gender"></button>
+                        </div>
+                </div>
             <div>
                     <button type="submit">Save</button>
             </div>
