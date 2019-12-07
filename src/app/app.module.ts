@@ -20,6 +20,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { UserComponent } from './user/user.component';
 import { ProfileUpdateComponent } from './user/profile-update/profile-update.component';
 import { ProfileBlogsComponent } from './user/profile-blogs/profile-blogs.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 // Services
 import { BlogService } from './blog/blog.service';
@@ -27,6 +28,7 @@ import { UserService } from './user/user.service';
 import { AboutComponent } from './home/about/about.component';
 import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
+import { DialogService } from './dialog/dialog.service';
 
 // AUTH SERVICES
 import { AuthGuard } from './auth/auth-guard.service';
@@ -51,6 +53,7 @@ import { AuthService } from './auth/auth.service';
       AboutComponent,
       UserRegistrationComponent,
       UserLoginComponent,
+      DialogComponent,
  
    ],
    imports: [
@@ -64,7 +67,8 @@ import { AuthService } from './auth/auth.service';
       BlogService,
       AuthGuard,
       AuthService,
-      UserService
+      UserService,
+      DialogService
    ],
    bootstrap: [
       AppComponent

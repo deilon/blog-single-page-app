@@ -9,9 +9,9 @@ export class UserService {
 
     private users: User[] = [
       new User(0, 'jennigritters', 'password', 'Jenni Gritters', 'www.jennigritters.com', 'Web Developer/Designer',
-                '+639182132918', 'female', '../../assets/images/users/user.jpeg'),
+                '+639182132918', 'Female', '../../assets/images/users/user.jpeg'),
       new User(1, 'sammy', 'sampass', 'Sammy Sarmiento', 'www.sammysarmiento.com', 'Film Director',
-                '+639182132918', 'female', '../../assets/images/users/user.jpeg')
+                '+639182132918', 'Female', '../../assets/images/users/user.jpeg')
     ];
 
     getUser(index: number) {

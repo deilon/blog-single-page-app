@@ -19,10 +19,11 @@
                         <div>
                                 <input type="text" name="phone" placeholder="Phone Number" formControlName="phone">
                         </div>
-                        <div>
-                                <button type="button"><input readonly type="text" name="gender" formControlName="gender"></button>
-                        </div>
                 </div>
+                        <div>
+                                <button type="button" (click)="openGenderDialog('gender-dialog')"><input readonly type="text" value="{{authUser.gender}}"></button>
+                        </div>
+                
             <div>
                     <button type="submit">Save</button>
             </div>
@@ -30,3 +31,11 @@
         </form>
     </div>
 </div>
+
+<app-dialog id="gender-dialog">
+        <form [formGroup]="genderForm" (ngSubmit)="onGenderSubmit('gender-dialog')">
+                <label><input type="radio" name="gender" formControlName="gender" value="0" checked="{{authUser.gender === 'Male' ? true : null}}"> Male</label>
+                <label><input type="radio" name="gender" formControlName="gender" value="1" checked="{{authUser.gender === 'Female' ? true : null}}"> Female</label>
+                <button type="submit">Done</button>
+        </form>
+</app-dialog>
