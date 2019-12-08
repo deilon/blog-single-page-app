@@ -18,6 +18,16 @@ export class UserService {
       return this.users[index];
     }
 
+    getAllUsersExceptAuth(id: number) {
+      let filteredUsers = [];
+      for (let user of this.users) {
+        if (user.id !== id) {
+          filteredUsers.push(user.username);
+        }
+      }
+      return filteredUsers;
+    }
+
     getUserByUsername(index: string) {
       for (let user of this.users) {
         if (user.username === index) {
@@ -44,6 +54,8 @@ export class UserService {
       this.users.push(user);
       this.usersChanged.next(this.users.slice());
     }
+
+
 
 }
 

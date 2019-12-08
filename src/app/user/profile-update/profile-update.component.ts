@@ -16,7 +16,10 @@ export class ProfileUpdateComponent implements OnInit {
               private dialogService: DialogService,
               private userService: UserService) { }
 
+  regexUrl = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/;
+  regexPhone = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
   authUser: User = JSON.parse(localStorage.getItem('authUser'));
+  takenUsernames = this.userService.getAllUsersExceptAuth(this.authUser.id);
   genders = ['Male', 'Female'];
   profileSettings: FormGroup;
   genderForm: FormGroup;
@@ -26,12 +29,12 @@ export class ProfileUpdateComponent implements OnInit {
     this.profileSettings = this.fb.group({
       'basic': this.fb.group({
         'fullname': [this.authUser.name, [Validators.required, Validators.pattern(/^[ A-Za-z]([ A-Za-z]+)*$/)]],
-        'username': [this.authUser.username, Validators.required],
-        'website': [this.authUser.website],
+        'username': [this.authUser.username, [Validators.required, this.usernameUnavailable.bind(this), Validators.pattern(/^[A-Za-z0-9_@./#&+-]*$/)]],
+        'website': [this.authUser.website, this.urlValidityCheck.bind(this)],
         'bio': [this.authUser.bio]
       }),
       'private': this.fb.group({
-        'phone': [this.authUser.phone]
+        'phone': [this.authUser.phone, this.phoneValidityCheck.bind(this)]
       })
     })
 
@@ -39,6 +42,48 @@ export class ProfileUpdateComponent implements OnInit {
       'gender': [this.authUser.gender, Validators.required]
     })
 
+  }
+
+  onProfileSave() {
+    console.log(this.profileSettings);
+    if (this.profileSettings.valid) {
+      const user    = this.userService.getUser(this.authUser.id);
+      user.name     = this.profileSettings.value.basic.fullname;
+      user.username = this.profileSettings.value.basic.username;
+      user.website  = this.profileSettings.value.basic.website;
+      user.bio      = this.profileSettings.value.basic.bio;
+      user.phone    = this.profileSettings.value.private.phone;
+      this.profileSettings.reset;
+    }
+    this.profileSettings.reset;
+    return;
+  }
+
+  urlValidityCheck(control: AbstractControl): {[s: string]: boolean} {
+    let providedInput = control.value;
+    if (providedInput !== '') {
+      if (!this.regexUrl.test(providedInput)) {
+        return {'websiteInvalid': true}
+      }
+    }
+    return null
+  }
+
+  phoneValidityCheck(control: AbstractControl): {[s: string]: boolean} {
+    let providedInput = control.value;
+    if (providedInput !== '') {
+      if (!this.regexPhone.test(providedInput)) {
+        return {'websiteInvalid': true}
+      }
+    }
+    return null
+  }
+
+  usernameUnavailable(control: AbstractControl): {[s: string]: boolean} | null {
+    if (this.takenUsernames.indexOf(control.value) !== -1) {
+      return {'nameNotAvailable': true}
+    }
+    return null;
   }
 
   onGenderSubmit(dialogId: string) {

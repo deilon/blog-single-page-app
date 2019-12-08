@@ -1,15 +1,24 @@
 <div class="row">
     <div class="col">
-        <form [formGroup]="profileSettings">
+        <form [formGroup]="profileSettings" (ngSubmit)="onProfileSave()">
                 <div formGroupName="basic">
                         <div>
                                 <input type="text" name="fullname" placeholder="Name" formControlName="fullname">
+                                <span class="form-text text-muted" *ngIf="!profileSettings.get('basic.fullname').valid && profileSettings.get('basic.fullname').touched">
+                                Your name must only contain Letters and spaces
+                                </span>  
                         </div>
                         <div>
                                 <input type="text" name="username" placeholder="Username" formControlName="username">
+                                <span class="form-text text-muted" *ngIf="!profileSettings.get('basic.username').valid && profileSettings.get('basic.username').touched">
+                                        Your username must only contain Letters, numbers, period and underscore
+                                </span>                            
                         </div>
                         <div>
                                 <input type="text" name="website" placeholder="Website" formControlName="website">
+                                <span class="form-text text-muted" *ngIf="!profileSettings.get('basic.website').valid">
+                                        Please enter a valid website.
+                                </span>
                         </div>
                         <div>
                                 <textarea name="bio" rows="3" formControlName="bio"></textarea>
@@ -18,6 +27,9 @@
                 <div formGroupName="private">
                         <div>
                                 <input type="text" name="phone" placeholder="Phone Number" formControlName="phone">
+                                <span class="form-text text-muted" *ngIf="!profileSettings.get('private.phone').valid">
+                                        Please enter a valid phone number.
+                                </span>
                         </div>
                 </div>
                         <div>
