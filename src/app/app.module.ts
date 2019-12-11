@@ -7,13 +7,13 @@ import { EllipsisModule } from 'ngx-ellipsis';
 
 // Components
 import { CoverComponent } from './layout/cover/cover.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './public/home/home.component';
 import { AppComponent } from './app.component';
-import { NavComponent } from './home/nav/nav.component';
-import { SelectionComponent } from './home/selection/selection.component';
-import { ShowcaseComponent } from './home/showcase/showcase.component';
-import { ShoppingComponent } from './home/shopping/shopping.component';
-import { FooterComponent } from './home/footer/footer.component';
+import { NavComponent } from './public/home/nav/nav.component';
+import { SelectionComponent } from './public/home/selection/selection.component';
+import { ShowcaseComponent } from './public/home/showcase/showcase.component';
+import { ShoppingComponent } from './public/home/shopping/shopping.component';
+import { FooterComponent } from './public/home/footer/footer.component';
 import { BlogComponent } from './public/blog/blog.component';
 import { ReadComponent } from './public/blog/read/read.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -25,7 +25,7 @@ import { DialogComponent } from './dialog/dialog.component';
 // Services
 import { BlogService } from './_services/blog.service';
 import { UserService } from './_services/user.service';
-import { AboutComponent } from './home/about/about.component';
+import { AboutComponent } from './public/home/about/about.component';
 import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
 import { DialogService } from './dialog/dialog.service';
