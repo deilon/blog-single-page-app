@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { User } from '../../user/user.model';
-import { UserService } from '../../user/user.service';
+import { User } from '../../private/user/user.model';
+
+import { UserService } from '../../_services/user.service';
 import { AuthService } from '../auth.service';
 
 @Component({

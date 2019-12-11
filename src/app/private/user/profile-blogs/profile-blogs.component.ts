@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Blog } from 'src/app/blog/blog.model';
-import { BlogService } from 'src/app/blog/blog.service';
+import { BlogService } from 'src/app/_services/blog.service';
 
 @Component({
   selector: 'app-profile-blogs',

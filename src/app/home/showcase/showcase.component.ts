@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BlogService } from 'src/app/blog/blog.service';
-import { Blog } from 'src/app/blog/blog.model';
 import { Router } from '@angular/router';
+
+import { Blog } from 'src/app/blog/blog.model';
+
+import { BlogService } from 'src/app/_services/blog.service';
 
 @Component({
   selector: 'app-showcase',

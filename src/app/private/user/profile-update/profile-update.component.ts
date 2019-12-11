@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/for
 import { User } from '../user.model';
 
 import { DialogService } from 'src/app/dialog/dialog.service';
-import { UserService } from '../user.service';
+import { UserService } from '../../../_services/user.service';
 
 @Component({
   selector: 'app-profile-update',

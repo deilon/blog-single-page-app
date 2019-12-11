@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { BlogService } from '../blog.service';
 import { Blog } from '../blog.model';
-import { User } from 'src/app/user/user.model';
-import { UserService } from 'src/app/user/user.service';
+import { User } from 'src/app/private/user/user.model';
+
+import { BlogService } from '../../_services/blog.service';
+import { UserService } from 'src/app/_services/user.service';
+
 
 @Component({
   selector: 'app-read',

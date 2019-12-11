@@ -17,14 +17,14 @@ import { FooterComponent } from './home/footer/footer.component';
 import { BlogComponent } from './blog/blog.component';
 import { ReadComponent } from './blog/read/read.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { UserComponent } from './user/user.component';
-import { ProfileUpdateComponent } from './user/profile-update/profile-update.component';
-import { ProfileBlogsComponent } from './user/profile-blogs/profile-blogs.component';
+import { UserComponent } from './private/user/user.component';
+import { ProfileUpdateComponent } from './private/user/profile-update/profile-update.component';
+import { ProfileBlogsComponent } from './private/user/profile-blogs/profile-blogs.component';
 import { DialogComponent } from './dialog/dialog.component';
 
 // Services
-import { BlogService } from './blog/blog.service';
-import { UserService } from './user/user.service';
+import { BlogService } from './_services/blog.service';
+import { UserService } from './_services/user.service';
 import { AboutComponent } from './home/about/about.component';
 import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
@@ -33,7 +33,7 @@ import { DialogService } from './dialog/dialog.service';
 // AUTH SERVICES
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
-import { ViewUserComponent } from './view-user/view-user.component';
+import { ViewUserComponent } from './public/view-user/view-user.component';
 
 @NgModule({
    declarations: [
