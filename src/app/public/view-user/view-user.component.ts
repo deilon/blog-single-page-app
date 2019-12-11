@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Params, ActivatedRoute, Router } from '@angular/router';
 
-import { User } from '../../private/user/user.model';
-import { Blog } from '../../blog/blog.model';
+import { User } from '../../_model/user.model';
+import { Blog } from '../../_model/blog.model';
 import { BlogService } from '../../_services/blog.service'; 
 
 import { UserService } from '../../_services/user.service';

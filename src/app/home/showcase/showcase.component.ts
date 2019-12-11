@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Blog } from 'src/app/blog/blog.model';
+import { Blog } from 'src/app/_model/blog.model';
 
 import { BlogService } from 'src/app/_services/blog.service';
 

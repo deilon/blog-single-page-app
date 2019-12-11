@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs';
-import { User } from '../private/user/user.model';
+import { User } from '../_model/user.model';
 
 export class UserService {
 

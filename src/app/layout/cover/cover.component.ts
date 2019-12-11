@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Blog } from 'src/app/blog/blog.model';
-import { User } from 'src/app/private/user/user.model';
+import { Blog } from 'src/app/_model/blog.model';
+import { User } from 'src/app/_model/user.model';
 
 @Component({
   selector: 'app-cover',
