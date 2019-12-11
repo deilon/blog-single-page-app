@@ -12,6 +12,7 @@ import { ProfileBlogsComponent } from './user/profile-blogs/profile-blogs.compon
 import { ProfileUpdateComponent } from './user/profile-update/profile-update.component';
 
 import { AuthGuard } from './auth/auth-guard.service';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     { path: 'blog', /*canActivateChild: [AuthGuard],*/ component: BlogComponent, children: [
         { path: ':id/read', component: ReadComponent }
     ] },
+    { path: 'view/:username', component: ViewUserComponent },
     { path: 'profile', component: UserComponent, canActivateChild: [AuthGuard], children: [
         { path: '', component: ProfileBlogsComponent },
         { path: 'blogs', component: ProfileBlogsComponent },

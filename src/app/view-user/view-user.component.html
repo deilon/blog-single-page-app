@@ -1,0 +1,45 @@
+<div class="user-profile-nav">
+    <div class="container">
+        ...
+    </div>
+</div>
+
+<div class="user-profile-container">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-3">
+                <div class="user-profile-view-top">
+                    <div class="user-profile-image" [style.background-image]="'url('+user.photo+')'"></div>
+                    <div class="user-profile-name text-center">{{ user.name }}</div>
+                    <div class="user-profile-bio text-center">{{ user.bio }}</div>
+                    <div class="user-profile-website text-center"><a href="#">{{ user.website }}</a></div>
+                </div>
+                <div class="line-separator-light"></div>
+                <div class="user-profile-bottom">
+                    Tags
+                    <div class="tag-badges">
+                        <span class="badge badge-secondary">Technology</span>
+                        <span class="badge badge-secondary">Personal Growth</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-9">
+                <div class="row">
+                    <div *ngFor="let blog of blogs; let i = index" class="col-xl-6">
+                        <div class="user-blog">
+                            <div class="user-blog-photo" [style.background-image]="'url('+blog.imagePath+')'"></div>
+                            <div class="user-blog-details">
+                                <div class="user-blog-title"><h2>{{blog.title}}</h2></div>
+                                <div class="user-blog-short-description" ellipsis [innerHtml]="blog.content"></div>
+                                <div class="user-blog-read"><a [routerLink]="['/blog', blog.id, 'read']">Read more</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

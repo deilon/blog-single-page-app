@@ -33,6 +33,7 @@ import { DialogService } from './dialog/dialog.service';
 // AUTH SERVICES
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 @NgModule({
    declarations: [
@@ -54,6 +55,7 @@ import { AuthService } from './auth/auth.service';
       UserRegistrationComponent,
       UserLoginComponent,
       DialogComponent,
+      ViewUserComponent,
  
    ],
    imports: [

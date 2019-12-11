@@ -18,7 +18,7 @@
             <div *ngIf="!isIndex" class="cover-blog-info">
                 <div class="cover-blog-user">
                     <div class="cover-blog-user-img" [style.background-image]="'url('+user.photo+')'"></div>
-                    <div class="cover-blog-user-name"><a [routerLink]="['/user', user.id]">{{ user.name }}</a></div>
+                    <div class="cover-blog-user-name"><a [routerLink]="['/view', user.username]">{{ user.name }}</a></div>
                 </div>
                 <div class="cover-blog-metrics">
                     <ul>
