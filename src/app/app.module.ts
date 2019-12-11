@@ -14,7 +14,6 @@ import { HomeModule } from './modules/public/home/home.module';
 import { CoverComponent } from './layout/cover/cover.component';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './layout/not-found/not-found.component';
-import { DialogComponent } from './dialog/dialog.component';
 
 
 // Services
@@ -22,7 +21,7 @@ import { BlogService } from './_services/blog.service';
 import { UserService } from './_services/user.service';
 import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
-import { DialogService } from './dialog/dialog.service';
+import { DialogService } from './shared/dialog/dialog.service';
 
 // AUTH SERVICES
 import { AuthGuard } from './auth/auth-guard.service';
@@ -34,8 +33,7 @@ import { AuthService } from './auth/auth.service';
       CoverComponent,
       NotFoundComponent,
       UserRegistrationComponent,
-      UserLoginComponent,
-      DialogComponent
+      UserLoginComponent
    ],
    imports: [
       BrowserModule,
