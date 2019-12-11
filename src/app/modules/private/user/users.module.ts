@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms'; 
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { UserComponent } from './user.component';
 import { ProfileBlogsComponent } from './profile-blogs/profile-blogs.component';
@@ -16,7 +17,8 @@ import { UserRouingModule } from './user-routing.module';
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        UserRouingModule
+        UserRouingModule,
+        SharedModule
     ]
 })
 export class UsersModule { }
