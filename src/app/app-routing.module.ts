@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { BlogComponent } from './blog/blog.component';
-import { ReadComponent } from './blog/read/read.component';
+import { BlogComponent } from './public/blog/blog.component';
+import { ReadComponent } from './public/blog/read/read.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';

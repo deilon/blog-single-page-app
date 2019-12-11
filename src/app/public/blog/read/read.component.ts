@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { Blog } from '../../_model/blog.model';
+import { Blog } from '../../../_model/blog.model';
 import { User } from 'src/app/_model/user.model';
 
-import { BlogService } from '../../_services/blog.service';
+import { BlogService } from '../../../_services/blog.service';
 import { UserService } from 'src/app/_services/user.service';
 
 
