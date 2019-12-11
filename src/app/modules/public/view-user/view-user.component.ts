@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Params, ActivatedRoute, Router } from '@angular/router';
 
-import { User } from '../../_model/user.model';
-import { Blog } from '../../_model/blog.model';
-import { BlogService } from '../../_services/blog.service'; 
+import { User } from 'src/app/_model/user.model';
+import { Blog } from 'src/app/_model/blog.model';
 
-import { UserService } from '../../_services/user.service';
+import { BlogService } from 'src/app/_services/blog.service'; 
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-view-user',
