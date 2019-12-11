@@ -16,7 +16,7 @@ import { ShoppingComponent } from './public/home/shopping/shopping.component';
 import { FooterComponent } from './public/home/footer/footer.component';
 import { BlogComponent } from './public/blog/blog.component';
 import { ReadComponent } from './public/blog/read/read.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { UserComponent } from './private/user/user.component';
 import { ProfileUpdateComponent } from './private/user/profile-update/profile-update.component';
 import { ProfileBlogsComponent } from './private/user/profile-blogs/profile-blogs.component';

@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './public/home/home.component';
 import { BlogComponent } from './public/blog/blog.component';
 import { ReadComponent } from './public/blog/read/read.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
 
