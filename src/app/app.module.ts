@@ -17,10 +17,9 @@ import { FooterComponent } from './public/home/footer/footer.component';
 import { BlogComponent } from './public/blog/blog.component';
 import { ReadComponent } from './public/blog/read/read.component';
 import { NotFoundComponent } from './layout/not-found/not-found.component';
-import { UserComponent } from './private/user/user.component';
-import { ProfileUpdateComponent } from './private/user/profile-update/profile-update.component';
-import { ProfileBlogsComponent } from './private/user/profile-blogs/profile-blogs.component';
 import { DialogComponent } from './dialog/dialog.component';
+
+// My Modules
 
 // Services
 import { BlogService } from './_services/blog.service';
@@ -48,9 +47,6 @@ import { ViewUserComponent } from './public/view-user/view-user.component';
       ReadComponent,
       HomeComponent,
       NotFoundComponent,
-      UserComponent,
-      ProfileUpdateComponent,
-      ProfileBlogsComponent,
       AboutComponent,
       UserRegistrationComponent,
       UserLoginComponent,

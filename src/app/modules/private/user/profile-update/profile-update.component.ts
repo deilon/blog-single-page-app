@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/forms';
-import { User } from '../../../_model/user.model';
+import { User } from '../../../../_model/user.model';
 
 import { DialogService } from 'src/app/dialog/dialog.service';
-import { UserService } from '../../../_services/user.service';
+import { UserService } from '../../../../_services/user.service';
 
 @Component({
   selector: 'app-profile-update',

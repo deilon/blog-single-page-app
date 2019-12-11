@@ -8,25 +8,16 @@ import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
 
-import { UserComponent } from './private/user/user.component';
-import { ProfileBlogsComponent } from './private/user/profile-blogs/profile-blogs.component';
-import { ProfileUpdateComponent } from './private/user/profile-update/profile-update.component';
 import { ViewUserComponent } from './public/view-user/view-user.component'; 
-
-import { AuthGuard } from './auth/auth-guard.service';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
-    { path: 'blog', /*canActivateChild: [AuthGuard],*/ component: BlogComponent, children: [
+    { path: 'blog', component: BlogComponent, children: [
         { path: ':id/read', component: ReadComponent }
     ] },
     { path: 'view/:username', component: ViewUserComponent },
-    { path: 'profile', component: UserComponent, canActivateChild: [AuthGuard], children: [
-        { path: '', component: ProfileBlogsComponent },
-        { path: 'blogs', component: ProfileBlogsComponent },
-        { path: 'update', component: ProfileUpdateComponent }
-    ] },
+    { path: 'profile', loadChildren: () => import('./modules/private/user/users.module').then(m => m.UsersModule) },
     { path: 'signup', component: UserRegistrationComponent },
     { path: 'login', component: UserLoginComponent },
 
