@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/data/schema/user.model';
 
 import { UserService } from 'src/app/data/service/user.service';
-import { AuthService } from 'src/app/auth/auth.service';
+import { AuthService } from 'src/app/core/service/auth.service';
 
 @Component({
   selector: 'app-user-profile',

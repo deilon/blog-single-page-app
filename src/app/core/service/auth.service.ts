@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { UserService } from '../data/service/user.service';
+import { UserService } from '../../data/service/user.service';
 
 @Injectable()
 export class AuthService {

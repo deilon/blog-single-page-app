@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ViewUserComponent } from './modules/public/view-user/view-user.component'; 
-import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
-import { UserLoginComponent } from './auth/user-login/user-login.component';
+import { UserRegistrationComponent } from './core/auth/user-registration/user-registration.component';
+import { UserLoginComponent } from './core/auth/user-login/user-login.component';
 import { NotFoundComponent } from './layout/not-found/not-found.component';
 
 
