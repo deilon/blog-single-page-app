@@ -16,8 +16,8 @@ import { NotFoundComponent } from './layout/not-found/not-found.component';
 
 
 // Services
-import { BlogService } from './_services/blog.service';
-import { UserService } from './_services/user.service';
+import { BlogService } from './data/service/blog.service';
+import { UserService } from './data/service/user.service';
 import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
 import { DialogService } from './shared/dialog/dialog.service';

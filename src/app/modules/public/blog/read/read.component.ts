@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { Blog } from 'src/app/_model/blog.model';
-import { User } from 'src/app/_model/user.model';
+import { Blog } from 'src/app/data/schema/blog.model';
+import { User } from 'src/app/data/schema/user.model';
 
-import { BlogService } from 'src/app/_services/blog.service';
-import { UserService } from 'src/app/_services/user.service';
+import { BlogService } from 'src/app/data/service/blog.service';
+import { UserService } from 'src/app/data/service/user.service';
 
 
 @Component({
