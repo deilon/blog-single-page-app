@@ -15,7 +15,7 @@ const usersRoutes: Routes = [
         { path: 'update', component: ProfileUpdateComponent },
         
     ] },
-    { path: 'blog-categories', component: BlogCategoriesComponent }
+    { path: 'blog-categories', component: BlogCategoriesComponent, canActivate: [AuthGuard] }
 ]
 
 @NgModule({
