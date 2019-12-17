@@ -8,12 +8,14 @@ import { EllipsisModule } from 'ngx-ellipsis';
 import { UserComponent } from './user.component';
 import { ProfileBlogsComponent } from './profile-blogs/profile-blogs.component';
 import { ProfileUpdateComponent } from './profile-update/profile-update.component';
+import { BlogCategoriesComponent } from './blog-categories/blog-categories.component';
 
 @NgModule({
     declarations: [
         UserComponent,
         ProfileBlogsComponent,
-        ProfileUpdateComponent
+        ProfileUpdateComponent,
+        BlogCategoriesComponent
     ],
     imports: [
         CommonModule,
