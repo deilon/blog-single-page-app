@@ -501,11 +501,32 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.nav-group {
+    text-align: right;
+}
+.nav-group::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.nav-group-link {
+    font-family: 'montserrat light';
+    display: inline-block;
+    line-height: 35px;
+    margin-right: 15px;
+}
+.nav-group-link a {
+    font-size: 14px;
+    color: #000;
+}
+.active-dashboard-link {
+    font-family: 'montserrat medium';
+}
 .user-profile-avatar {
     width: 35px;
     height: 35px;
     background: #f1f1f1;
-    margin-left: auto;
+    float: right;
 }
 .user-profile-container {
     padding-top: 40px;

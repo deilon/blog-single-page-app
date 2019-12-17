@@ -1,9 +1,11 @@
 <div class="user-profile-nav">
     <div class="container">
-        <div class="user-profile-avatar"></div>
-        <a (click)="logout()">Logout</a>
-        <a routerLink="blogs">Blogs</a>
-        <a routerLink="update">Profile Settings</a>
+        <div class="nav-group">
+            <div class="nav-group-link"><a routerLink="blogs" routerLinkActive="active-dashboard-link" >Blogs</a></div>
+            <div class="nav-group-link"><a routerLink="update" routerLinkActive="active-dashboard-link">Profile Settings</a></div>
+            <div class="nav-group-link"><a (click)="logout()" style="cursor: pointer;">Logout</a></div>
+            <div class="user-profile-avatar"></div>
+        </div>
     </div>
 </div>
 
