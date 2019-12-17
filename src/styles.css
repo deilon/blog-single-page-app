@@ -594,23 +594,23 @@ body {
 
 
 /* ========================================================
-   User Registration
+   User Authentication Login/Register
    ======================================================== */
-.user-reg {
+.user-auth {
     padding-top: 50px;
 }
-.user-reg-content h1 {
+.user-auth-content h1 {
     font-family: 'montserrat light';
     font-size: 14px;
     text-align: center;
     letter-spacing: 3px;
     margin-bottom: 30px;
 }
-.user-reg-content {
+.user-auth-content {
     margin: 0 auto;
     width: fit-content;
 }
-.user-reg-content form input {
+.user-auth-content form input {
     color: #193441;
     height: 40px;
     width: 100%;
@@ -621,30 +621,43 @@ body {
     border: none;
     
 }
-.user-reg-content form input:focus {
+.user-auth-content form input:focus {
     outline: 0;
 }
-.user-reg-content form input::placeholder {
+.user-auth-content form input::placeholder {
     color: #B3B3B3;
 }
-.user-reg-content form div[class*="reg-"] {
+.user-auth-content form div[class*="auth-"] {
     margin-bottom: 25px;
 }
-.user-reg-form {
+.user-auth-form {
     background: lightgray;
     padding: 30px;
     width: 400px;
     margin: 0 auto;
 }
-.reg-submit button {
+.auth-submit button {
     width: 100%;
     font-family: 'montserrat semibold';
     font-size: 14px;
 }
-.user-reg-content .form-text {
+.user-auth-content .form-text {
     margin-top: 10px;
     font-family: 'montserrat medium';
     font-size: 12px;
     line-height: 1.4;
     color: #D92938 !important;
+}
+.auth-create  {
+    letter-spacing: 1.5px;
+    font-family: 'montserrat regular';
+    font-size: 13px;
+    text-align: center;
+}
+.auth-create a {
+    color: inherit;
+}
+.auth-create a:hover {
+    color: #5A81A8;
+    text-decoration: underline;
 }

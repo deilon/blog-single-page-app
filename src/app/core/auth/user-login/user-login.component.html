@@ -1,24 +1,38 @@
-<div class="user-login">
+<div class="user-auth">
     <div class="container">
         <div class="row">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <div>
-                    <input type="text" spellcheck="false" placeholder="username" formControlName="username">
-                    <span class="form-text text-muted" *ngIf="!loginForm.get('username').valid && submitted">
-                        <span class="form-text text-muted" *ngIf="loginForm.get('username').errors?.required">Username is required</span>
-                        <span class="form-text text-muted" *ngIf="loginForm.get('username').errors?.userNotFound">The user does not belong to any account</span>
+            <div class="col">
+                <div class="user-auth-content">
+                    <h1>USER LOGIN | QUIRE</h1>
+                    <div class="user-auth-form">
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
-                    </span>
+                            <div class="auth-username">
+                                <input type="text" spellcheck="false" placeholder="username" formControlName="username">
+                                <span class="form-text text-muted" *ngIf="!loginForm.get('username').valid && submitted">
+                                    <span class="form-text text-muted" *ngIf="loginForm.get('username').errors?.required">Username is required</span>
+                                    <span class="form-text text-muted" *ngIf="loginForm.get('username').errors?.userNotFound">The user does not belong to any account</span>
+            
+                                </span>
+                            </div>
+                            <div class="auth-password">
+                                <input type="password" spellcheck="false" placeholder="password" formControlName="password">
+                                <span class="form-text text-muted" *ngIf="!loginForm.get('password').valid && submitted">
+                                    <span class="form-text text-muted" *ngIf="loginForm.get('password').errors?.required">Password is required</span>
+                                    <span class="form-text text-muted" *ngIf="loginForm.get('password').errors?.passwordIncorrect">Password is incorrect</span>
+                                </span>
+                            </div>
+                            <div class="auth-submit">
+                                <button class="btn btn-secondary" type="submit">Login</button>
+                            </div>
+
+                            <div class="auth-create">
+                                No account? <a routerLink="/signup">Create one</a>
+                            </div>
+                        </form>      
+                    </div>          
                 </div>
-                <div>
-                    <input type="password" spellcheck="false" placeholder="password" formControlName="password">
-                    <span class="form-text text-muted" *ngIf="!loginForm.get('password').valid && submitted">
-                        <span class="form-text text-muted" *ngIf="loginForm.get('password').errors?.required">Password is required</span>
-                        <span class="form-text text-muted" *ngIf="loginForm.get('password').errors?.passwordIncorrect">Password is incorrect</span>
-                    </span>
-                </div>
-                <button class="btn btn-primary" type="submit">Login</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>
