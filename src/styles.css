@@ -501,6 +501,19 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.nav-group-brand {
+    float: left;
+    line-height: 35px;
+}
+.brand-dark {
+    font-family: 'nooa semiserif';
+    font-size: 25px;
+    color: #333;
+    letter-spacing: 5px;
+}
+.brand-dark:hover {
+    color: #333;
+}
 .nav-group {
     text-align: right;
 }
@@ -523,9 +536,12 @@ body {
     font-family: 'montserrat medium';
 }
 .user-profile-avatar {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 3px;
     width: 35px;
     height: 35px;
-    background: #f1f1f1;
     float: right;
 }
 .user-profile-container {
