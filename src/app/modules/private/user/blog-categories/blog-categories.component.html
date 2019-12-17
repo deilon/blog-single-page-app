@@ -9,3 +9,24 @@
         </div>
     </div>
 </div>
+
+<div class="blog-categories">
+    <div class="blog-categories-top-control">
+        <div class="container">
+            <a href="#">Create new blog</a>
+        </div>
+    </div>
+
+    <div class="blog-categories-list">
+        <div class="container">
+            <div *ngFor="let category of availableCategories">
+                <div class="blog-categories-name">{{ category }}</div>
+                <div class="row">
+                    <div class="col"><div style="background: white">Blog</div></div>
+                    <div class="col"><div style="background: white">Blog</div></div>
+                    <div class="col"><div style="background: white">Blog</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

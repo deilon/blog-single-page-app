@@ -62,4 +62,20 @@ export class BlogService {
     return userBlogs;
   }
 
+  getAvailableCategories() {
+    let availableCategories = [];
+    // get available categories depending on blogs
+    for (let blog of this.categories) {
+      for(let categoryOfBlog of this.blogs.map(x => x.categories)) {
+        if (categoryOfBlog.includes(blog)) {
+          // check if already has in it 
+          if(!availableCategories.includes(blog)) {
+            availableCategories.push(blog);
+          }
+        }
+      }
+    }
+    return availableCategories;
+  }
+
 }

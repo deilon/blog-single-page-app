@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from 'src/app/data/service/blog.service';
 
 @Component({
   selector: 'app-blog-categories',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogCategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private blogService: BlogService) { }
+
+  availableCategories = this.blogService.getAvailableCategories();
 
   ngOnInit() {
   }
+
+
 
 }
