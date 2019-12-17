@@ -8,7 +8,7 @@ import { NotFoundComponent } from './layout/not-found/not-found.component';
 
 
 const appRoutes: Routes = [
-    { path: '', loadChildren: () => import('./modules/public/home/home.module').then(m => m.HomeModule) },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', loadChildren: () => import('./modules/public/home/home.module').then(m => m.HomeModule) },
     { path: 'view/:username', component: ViewUserComponent },
     { path: 'blog', loadChildren: () => import('./modules/public/blog/blog.module').then(m => m.BlogModule) },
