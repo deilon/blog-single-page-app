@@ -22,9 +22,7 @@
             <div *ngFor="let category of availableCategories">
                 <div class="blog-categories-name">{{ category }}</div>
                 <div class="row">
-                    <div class="col"><div style="background: white">Blog</div></div>
-                    <div class="col"><div style="background: white">Blog</div></div>
-                    <div class="col"><div style="background: white">Blog</div></div>
+                    <div class="col" *ngFor="let blog of getBlogs(category)"><div style="background: white">{{ blog.title }}</div></div>
                 </div>
             </div>
         </div>

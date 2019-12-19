@@ -16,5 +16,9 @@ export class BlogCategoriesComponent implements OnInit {
   }
 
 
+  getBlogs(category: string) {
+   return this.blogService.getBlogsByCategory(category);
+  }
+
 
 }

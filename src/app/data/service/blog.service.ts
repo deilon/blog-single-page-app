@@ -78,4 +78,14 @@ export class BlogService {
     return availableCategories;
   }
 
+  getBlogsByCategory(category: string) {
+    let blogsByCategory = [];
+    for (let blog of this.blogs) {
+      if (blog.categories.includes(category)) {
+        blogsByCategory.push(blog);
+      }
+    }
+    return blogsByCategory;
+  }
+
 }
