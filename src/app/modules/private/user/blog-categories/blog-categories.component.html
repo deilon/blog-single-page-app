@@ -22,7 +22,7 @@
             <div class="blog-categories-row" *ngFor="let category of availableCategories">
                 <div class="blog-categories-name"><h1>{{ category }}</h1></div>
                 <div class="row">
-                    <div class="col-lg-4 col-xl-4" *ngFor="let blog of getBlogs(category)">
+                    <div class="col-lg-4 col-xl-4" *ngFor="let blog of getBlogs(category) | slice:0:3;">
                         <div class="blog-categories-img" [style.background-image]="'url('+ blog.imagePath +')'">
                             <button type="button" class="btn btn-warning">EDIT</button>
                         </div>
