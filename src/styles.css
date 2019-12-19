@@ -698,3 +698,26 @@ body {
     color: #5A81A8;
     text-decoration: underline;
 }
+
+
+/* ========================================================
+   Blog By Categories
+   ======================================================== */
+.blog-categories {
+    margin-top: 50px;
+}
+.blog-categories-row {
+    margin-bottom: 50px;
+}
+.blog-categories-list {
+    
+}
+.blog-categories-img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+.blog-categories-name {
+    margin-bottom: 10px;
+}
