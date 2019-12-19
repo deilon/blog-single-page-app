@@ -726,7 +726,8 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     height: 300px;
     position: relative;
 }
@@ -742,8 +743,19 @@ body {
     margin: 15px;
 }
 .blog-categories-title {
-    padding: 5px;
-    margin-top: 15px;
+    height: 100px;
+    background-color: #D2D7D9;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
     font-family: 'montserrat regular';
     line-height: 1.5;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.blog-categories-seemore button{
+    margin-top: 10px;
+    margin-left: auto;
+    font-family: 'montserrat semibold';
+    color: #333;
 }
