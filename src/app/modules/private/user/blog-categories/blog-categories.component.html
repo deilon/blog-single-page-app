@@ -22,7 +22,7 @@
             <div *ngFor="let category of availableCategories">
                 <div class="blog-categories-name">{{ category }}</div>
                 <div class="row">
-                    <div class="col" *ngFor="let blog of getBlogs(category)"><div style="background: white">{{ blog.title }}</div></div>
+                    <div class="col-lg-4 col-xl-4" *ngFor="let blog of getBlogs(category)"><div style="background: white">{{ blog.title }}</div></div>
                 </div>
             </div>
         </div>
