@@ -17,14 +17,14 @@
         </div>
     </div>
 
-    <div class="blog-categories-list mt-5">
+    <div class="blog-categories-list">
         <div class="container">
             <div class="blog-categories-row" *ngFor="let category of availableCategories">
                 <div class="blog-categories-name"><h1>{{ category }}</h1></div>
                 <div class="row">
                     <div class="col-lg-4 col-xl-4" *ngFor="let blog of getBlogs(category)">
                         <div class="blog-categories-img" [style.background-image]="'url('+ blog.imagePath +')'"></div>
-                        <div style="background: white">{{ blog.title }}</div>
+                        <div class="blog-categories-title">{{ blog.title }}</div>
                     </div>
                 </div>
             </div>

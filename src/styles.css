@@ -706,18 +706,32 @@ body {
 .blog-categories {
     margin-top: 50px;
 }
-.blog-categories-row {
+.blog-categories-top-control {
     margin-bottom: 50px;
 }
+.blog-categories-name {
+    margin-bottom: 20px;
+}
+.blog-categories-name h1 {
+    font-family: 'montserrat semibold';
+    font-size: 18px;
+}
+.blog-categories-row {
+    margin-bottom: 80px;
+}
 .blog-categories-list {
-    
+    margin-top: 20px;
 }
 .blog-categories-img {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    border-radius: 5px;
     height: 300px;
 }
-.blog-categories-name {
-    margin-bottom: 10px;
+.blog-categories-title {
+    padding: 5px;
+    margin-top: 15px;
+    font-family: 'montserrat regular';
+    line-height: 1.5;
 }
