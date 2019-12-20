@@ -23,11 +23,12 @@ export class UserLoginComponent implements OnInit {
   usernameFound = false;
   user: User;
   submitted = false;
+  defaultUser = this.userService.getUser(0);
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      'username': [null, Validators.required],
-      'password': [null, Validators.required]
+      'username': [this.defaultUser.username, Validators.required],
+      'password': [this.defaultUser.password, Validators.required]
     }, { validator: this.loginMustValid('username', 'password') });
   }
 
@@ -67,6 +68,7 @@ export class UserLoginComponent implements OnInit {
 
     }
   }
+
 
 
 }
