@@ -9,13 +9,15 @@ import { UserComponent } from './user.component';
 import { ProfileBlogsComponent } from './profile-blogs/profile-blogs.component';
 import { ProfileUpdateComponent } from './profile-update/profile-update.component';
 import { BlogCategoriesComponent } from './blog-categories/blog-categories.component';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
     declarations: [
         UserComponent,
         ProfileBlogsComponent,
         ProfileUpdateComponent,
-        BlogCategoriesComponent
+        BlogCategoriesComponent,
+        CategoryComponent
     ],
     imports: [
         CommonModule,
