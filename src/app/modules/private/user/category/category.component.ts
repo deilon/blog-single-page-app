@@ -12,12 +12,13 @@ export class CategoryComponent implements OnInit {
   constructor(private route: ActivatedRoute, private blogService: BlogService) { }
 
   categoryBlogs: Array<object>;
-
+  categoryName: string;
+  
   ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
-        let categoryName = params['name'];
-        this.categoryBlogs = this.blogService.getBlogsByCategory(categoryName);
+        this.categoryName = params['name'];
+        this.categoryBlogs = this.blogService.getBlogsByCategory(this.categoryName);
       }
     );
   }

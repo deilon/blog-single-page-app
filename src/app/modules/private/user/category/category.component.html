@@ -10,11 +10,26 @@
     </div>
 </div>
 
-<div class="category">
-    <div class="container">
-        <div class="row">
-            <div class="col" *ngFor="let blog of categoryBlogs">
-                {{ blog.title }}
+
+<div class="blog-categories">
+    <div class="blog-categories-top-control">
+        <div class="container">
+            <a href="#">Create new blog for {{ categoryName }}</a>
+        </div>
+    </div>
+
+    <div class="blog-categories-list">
+        <div class="container">
+            <div class="blog-categories-row">
+                <div class="blog-categories-name"><h1>{{ categoryName }}</h1></div>
+                <div class="row">
+                    <div class="col-lg-4 col-xl-4" *ngFor="let blog of categoryBlogs">
+                        <div class="blog-categories-img" [style.background-image]="'url('+ blog.imagePath +')'">
+                            <button type="button" class="btn btn-warning">EDIT</button>
+                        </div>
+                        <div class="blog-categories-title">{{ blog.title }}</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
