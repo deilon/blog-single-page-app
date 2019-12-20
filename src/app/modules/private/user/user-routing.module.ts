@@ -17,7 +17,7 @@ const usersRoutes: Routes = [
         
     ] },
     { path: 'blog-categories', component: BlogCategoriesComponent, canActivate: [AuthGuard] },
-    { path: 'category', component: CategoryComponent, canActivate: [AuthGuard] }
+    { path: 'category/:name', component: CategoryComponent, canActivate: [AuthGuard] }
 ]
 
 @NgModule({

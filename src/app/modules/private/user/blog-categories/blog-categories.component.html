@@ -29,7 +29,7 @@
                         <div class="blog-categories-title">{{ blog.title }}</div>
                     </div>
                 </div>
-                <div class="blog-categories-seemore row"><button type="button" class="btn btn-link">SEE MORE</button></div>
+                <div class="blog-categories-seemore row"><a type="button" class="btn btn-link" [routerLink]="['/profile/category', category]" >SEE MORE</a></div>
             </div>
         </div>
     </div>
