@@ -28,6 +28,11 @@ export class UserService {
       return filteredUsers;
     }
 
+    getAuthenticatedUser() {
+      let authenticatedUser = JSON.parse(localStorage.getItem('authUser'));
+      return authenticatedUser;
+    }
+
     getUserByUsername(index: string) {
       for (let user of this.users) {
         if (user.username === index) {
