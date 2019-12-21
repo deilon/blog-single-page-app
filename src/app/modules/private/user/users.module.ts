@@ -10,6 +10,7 @@ import { ProfileBlogsComponent } from './profile-blogs/profile-blogs.component';
 import { ProfileUpdateComponent } from './profile-update/profile-update.component';
 import { BlogCategoriesComponent } from './blog-categories/blog-categories.component';
 import { CategoryComponent } from './category/category.component';
+import { BlogFormComponent } from './blog-form/blog-form.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { CategoryComponent } from './category/category.component';
         ProfileBlogsComponent,
         ProfileUpdateComponent,
         BlogCategoriesComponent,
-        CategoryComponent
+        CategoryComponent,
+        BlogFormComponent
     ],
     imports: [
         CommonModule,
