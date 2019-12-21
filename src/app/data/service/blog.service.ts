@@ -64,21 +64,23 @@ export class BlogService {
   }
 
   
-  getAvailableCategories() {
+  getAuthtAvailableCategories() {
 
     let availableCategories = [];
     let authenticatedUser = this.userService.getAuthenticatedUser();
 
     // get available categories depending on blogs
-    for (let category of this.categories) {
-        for(let categoryOfBlog of this.blogs.map(x => x.categories)) {
-          if (categoryOfBlog.includes(category)) {
-            // check if category already exists
-            if(!availableCategories.includes(category)) {
-              availableCategories.push(category);
-            }
+    for (let blog of this.blogs) {
+      if (blog.userId === authenticatedUser.id) {
+        let authUserBlog = blog;
+
+        for (let category of authUserBlog.categories) {
+          // check if category already exists
+          if(!availableCategories.includes(category)) {
+            availableCategories.push(category);
           }
-        } 
+        }
+      }
     }
 
     return availableCategories;

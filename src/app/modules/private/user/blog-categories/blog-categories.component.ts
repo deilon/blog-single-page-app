@@ -10,11 +10,10 @@ export class BlogCategoriesComponent implements OnInit {
 
   constructor(private blogService: BlogService) { }
 
-  availableCategories = this.blogService.getAvailableCategories();
+  availableCategories = this.blogService.getAuthtAvailableCategories();
 
   ngOnInit() {
   }
-
 
   getBlogs(category: string) {
    return this.blogService.getAuthBlogsByCategory(category);
