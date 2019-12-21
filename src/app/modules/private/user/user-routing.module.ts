@@ -6,6 +6,7 @@ import { ProfileBlogsComponent } from './profile-blogs/profile-blogs.component';
 import { ProfileUpdateComponent } from './profile-update/profile-update.component';
 import { BlogCategoriesComponent } from './blog-categories/blog-categories.component';
 import { CategoryComponent } from './category/category.component';
+import { BlogFormComponent } from './blog-form/blog-form.component';
 
 import { AuthGuard } from 'src/app/core/service/auth-guard.service'; 
 
@@ -17,7 +18,11 @@ const usersRoutes: Routes = [
         
     ] },
     { path: 'blog-categories', component: BlogCategoriesComponent, canActivate: [AuthGuard] },
-    { path: 'category/:name', component: CategoryComponent, canActivate: [AuthGuard] }
+    { path: 'category/:name', component: CategoryComponent, canActivate: [AuthGuard] },
+    { path: 'blog/new', component: BlogFormComponent, canActivate: [AuthGuard] },
+    { path: 'blog/new/:category', component: BlogFormComponent, canActivate: [AuthGuard] },
+    { path: 'blog/:id/edit', component: BlogFormComponent, canActivate: [AuthGuard] }
+
 ]
 
 @NgModule({
