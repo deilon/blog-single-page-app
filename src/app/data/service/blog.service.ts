@@ -70,12 +70,12 @@ export class BlogService {
     let authenticatedUser = this.userService.getAuthenticatedUser();
 
     // get available categories depending on blogs
-    for (let blog of this.categories) {
+    for (let category of this.categories) {
         for(let categoryOfBlog of this.blogs.map(x => x.categories)) {
-          if (categoryOfBlog.includes(blog)) {
-            // check if blog already exists
-            if(!availableCategories.includes(blog)) {
-              availableCategories.push(blog);
+          if (categoryOfBlog.includes(category)) {
+            // check if category already exists
+            if(!availableCategories.includes(category)) {
+              availableCategories.push(category);
             }
           }
         } 
