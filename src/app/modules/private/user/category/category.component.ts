@@ -18,7 +18,7 @@ export class CategoryComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.categoryName = params['name'];
-        this.categoryBlogs = this.blogService.getBlogsByCategory(this.categoryName);
+        this.categoryBlogs = this.blogService.getAuthBlogsByCategory(this.categoryName);
       }
     );
   }
