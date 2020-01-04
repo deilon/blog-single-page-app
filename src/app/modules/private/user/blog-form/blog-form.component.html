@@ -2,21 +2,126 @@
     <div class="container">
         <div class="nav-group-brand"><a href="#" class="brand-dark">QUIRE</a></div>
         <div class="nav-group">
-            <div class="nav-group-link"><a routerLink="blogs" routerLinkActive="active-dashboard-link" >Blogs</a></div>
+            <div class="nav-group-link"><a (click)="f.ngSubmit.emit()">Publish</a></div>
+            <div class="nav-group-link"><a routerLink="/profile/blogs" routerLinkActive="active-dashboard-link" >Blogs</a></div>
             <div class="nav-group-link"><a routerLink="update" routerLinkActive="active-dashboard-link">Profile Settings</a></div>
             <div class="nav-group-link"><a (click)="logout()" style="cursor: pointer;">Logout</a></div>
-            <div class="user-profile-avatar" [style.background-image]="'url('+user.photo+')'"></div>
+            <div class="user-profile-avatar"></div>
         </div>
     </div>
 </div>
 
 
-<div class="blog-form">
+<!-- Cover -->
+<form [formGroup]="blogForm" (ngSubmit)="onSubmit()" #f="ngForm">
+<section>
+    <div class="cover" [style.background-image]=" editMode ? 'url('+editCoverImagePath+')' : 'url('+defaultCoverImagePath+')' ">
+        <div class="container">
+            
+                <div class="cover-content">
+
+                    <!-- Create -->
+                    <div *ngIf="!editMode" class="title">
+                        <h1 id="blogTitle" 
+                            class="contenteditable"
+                            contenteditable="true" 
+                            placeholder="Title"
+                            [textContent]="blogTitle" 
+                            (input)="blogTitle=$event.target.textContent"></h1>
+                        <textarea class="d-none" formControlName="title" [(ngModel)]="blogTitle"></textarea>
+                        <span class="blog-error" *ngIf="!blogForm.get('title').valid && submitted">Please fill in the correct blog title.</span>
+
+                        <p id="blogDescription" 
+                            class="contenteditable"
+                            contenteditable="true" 
+                            placeholder="Description"
+                            [textContent]="blogDescription" 
+                            (input)="blogDescription=$event.target.textContent"></p>
+                        <textarea class="d-none" formControlName="description" [(ngModel)]="blogDescription"></textarea>
+                        <span class="blog-error" *ngIf="!blogForm.get('description').valid && submitted">Please fill in the correct blog description.</span>
+                    </div>
+
+                    <!-- Edit -->
+                    <div *ngIf="editMode" class="title">
+                        <h1 id="blogTitle" 
+                            contenteditable="true" 
+                            [textContent]="editBlogTitle" 
+                            (input)="editBlogTitle=$event.target.textContent"></h1>
+                        <textarea class="d-none" formControlName="title" [(ngModel)]="blogTitle"></textarea>
+
+                        <p id="blogDescription" contenteditable="true" [textContent]="editBlogDescription" (input)="editBlogDescription=$event.target.textContent"></p>
+                        <textarea class="d-none" formControlName="description" [(ngModel)]="editBlogDescription"></textarea>
+                    </div>
+
+                </div>
+           
+                <!-- Create -->
+                <div *ngIf="!editMode" class="cover-blog-tags" formArrayName="categories">
+                    <span class="badge badge-secondary category-tags-hoverable" 
+                          *ngFor="let category of blogForm.get('categories')?.controls; let i = index" 
+                          (click)="removeCategory(index, category.value)">{{category.value}}</span>
+
+                    <span class="btn-group drowpdown-wrap" dropdown>
+                        <span class="badge badge-secondary" 
+                              dropdownToggle 
+                              [ngClass]="{'ng-invalid': !blogForm.get('categories').valid && submitted}">Add category +</span> 
+                        <span class="blog-error" *ngIf="!blogForm.get('categories').valid && submitted">Categories are required.</span>
+
+                        <div class="dropdown-menu" *dropdownMenu>
+                            <a style="cursor: pointer" 
+                                class="dropdown-item" 
+                                *ngFor="let category of blogCategories" 
+                                (click)="addCategory(category)">{{category}}</a>
+                        </div>
+                    </span>
+                    
+                    <div *ngFor="let categoryControl of blogForm.get('categories').controls; let i = index">
+                        <input type="text" class="form-control d-none" [formControlName]="i" [value]="categoryControl.value">
+                    </div>
+                </div>
+
+                <!-- Edit -->
+                <div *ngIf="editMode" class="cover-blog-info">
+                    <div class="cover-blog-user">
+                        <div class="cover-blog-user-img"></div>
+                        <div class="cover-blog-user-name"><a>Firstname Lastname</a></div>
+                    </div>
+                    <div class="cover-blog-metrics">
+                        <ul>
+                            <li>Sept 17, 2019</li>
+                            <li>76 Likes</li>
+                            <li>409 Visits</li>
+                        </ul>
+                    </div>
+                </div>
+          
+        </div>
+    </div>
+</section>
+
+<div class="read">
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Blog-form</h1>
+
+        <!-- Create -->
+        <div *ngIf="!editMode">
+            <div class="blog-content contenteditable">
+                <p class="contenteditable"
+                contenteditable="true" 
+                placeholder="Type here"
+                [textContent]="blogContent" 
+                (input)="blogContent=$event.target.textContent"></p>
             </div>
+            <textarea class="d-none" formControlName="content" [(ngModel)]="blogContent"></textarea>
+            <span *ngIf="!blogForm.get('content').valid && submitted" 
+                    class="blog-error d-block mt-3">Please fill in the correct content for your blog.</span>
         </div>
+
+        <!-- Edit -->
+        <div *ngIf="editMode">
+            <div class="blog-content" contenteditable="true" [textContent]="editBlogContent" (input)="editBlogContent=$event.target.textContent"></div>
+            <textarea class="d-none" formControlName="content" [(ngModel)]="editBlogContent"></textarea>
+        </div>
+
     </div>
 </div>
+</form>

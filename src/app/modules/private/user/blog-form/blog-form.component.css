@@ -1,0 +1,60 @@
+/*
+ * Errors
+*/
+/* h1.ng-invalid.ng-touched, 
+p.ng-invalid.ng-touched,
+span.ng-invalid,
+div.ng-invalid.ng-touched {
+    border: 1px solid red !important;
+    outline: none;
+} */
+
+.contenteditable:focus {
+    outline: none;
+    border-bottom: 2px solid #05AFF2;
+}
+
+/* 
+ * Placeholder
+*/
+.contenteditable[placeholder]:empty:before {
+    content: attr(placeholder);
+}
+
+/* 
+ * Error message
+*/
+.blog-error {
+    font-family: 'montserrat medium';
+    font-size: 13px;
+    color: #D91E1E;
+}
+
+.cover {
+    padding-top: 200px;
+    padding-bottom: 100px;
+    background-color: #808080;
+}
+.cover-blog-tags {
+    cursor: pointer;
+}
+.cover-blog-tags .category-tags-hoverable:hover {
+    background-color: #343a40;
+}
+.cover-blog-tags .dropdown-wrap {
+    position: relative;
+}
+.cover-blog-tags .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background-color: #6c757d;
+}
+.cover-blog-tags .dropdown-menu .dropdown-item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cover-blog-tags .dropdown-menu .dropdown-item:hover {
+    background-color: #343a40;
+}

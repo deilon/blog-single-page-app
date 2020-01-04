@@ -13,7 +13,7 @@
 <div class="blog-categories">
     <div class="blog-categories-top-control">
         <div class="container">
-            <a href="#">Create new blog</a>
+            <a [routerLink]="['/profile/blog', 'new']">Create new blog</a>
         </div>
     </div>
 
@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-xl-4" *ngFor="let blog of getBlogs(category) | slice:0:3;">
                         <div class="blog-categories-img" [style.background-image]="'url('+ blog.imagePath +')'">
-                            <button type="button" class="btn btn-warning">EDIT</button>
+                            <a class="btn btn-warning" [routerLink]="['/profile/blog', blog.id, 'edit']">EDIT</a>
                         </div>
                         <div class="blog-categories-title">{{ blog.title }}</div>
                     </div>
