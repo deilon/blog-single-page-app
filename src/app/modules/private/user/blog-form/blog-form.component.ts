@@ -15,26 +15,21 @@ export class BlogFormComponent implements OnInit {
               private blogService: BlogService) { }
    
   blogCategories = this.blogService.categories;
+  defaultCoverImagePath = '../../../../../assets/images/defaultcoverimage.jpg';
 
   blogForm: FormGroup;
 
-  createByCategory = false;
   editMode = false;
-
-  newBlogCategoryName: string;
   editBlogId: number;
-
-  // Two way input & contenteditable binding
-  blogTitle: string;
-  blogDescription: string;
-  blogContent: string;
-
-  defaultCoverImagePath = '../../../../../assets/images/defaultcoverimage.jpg';
   editCoverImagePath: string;
   editBlogTitle: string;
   editBlogDescription: string;
+  editBlogCategories = new FormArray([], [Validators.required]);
   editBlogContent: string;
 
+  createByCategory = false;
+  newBlogCategoryName: string;
+  
   public imagePath;
   imgURL: any;
   public message: string;
@@ -53,6 +48,7 @@ export class BlogFormComponent implements OnInit {
         this.editBlogId = params['id'] != null ? +params['id'] : null;
         
         this.initForm();
+        console.log(this.blogForm.get('title').value);
       }
     );
 
@@ -88,7 +84,9 @@ export class BlogFormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    if (this.blogForm.valid) {
+    if (this.editMode && this.blogForm.valid) {
+      this.blogService.updateBlog(this.editBlogId, this.blogForm.value);
+    } else if (this.blogForm.valid) {
       this.blogService.addBlog(this.blogForm.value);
     }
     console.log(this.blogForm);
@@ -102,6 +100,10 @@ export class BlogFormComponent implements OnInit {
     let initBlogContent = '';
 
     if (this.editMode) {
+
+      // Edit mode DOM
+      // let titleDOM: HTMLHeadingElement = document.getElementById("blogTitle") as HTMLHeadingElement;
+
       const blog = this.blogService.getBlog(this.editBlogId);
       initCoverImagePath = blog.imagePath;
       initBlogTitle = blog.title;
@@ -110,10 +112,12 @@ export class BlogFormComponent implements OnInit {
       if (blog['categories']) {
         for (let category of blog.categories) {
           initBlogCategories.push(
-            this.fb.array([category])
+            new FormControl(category, Validators.required)
           );
         }
       }
+
+      // titleDOM.innerHTML = initBlogTitle;
     }
 
     this.blogForm = this.fb.group({
@@ -122,6 +126,12 @@ export class BlogFormComponent implements OnInit {
       'categories': initBlogCategories,
       'content': [initBlogContent, Validators.required]
     });
+
+    this.editCoverImagePath = initCoverImagePath;
+    this.editBlogTitle = initBlogTitle;
+    this.editBlogDescription = initBlogDescription;
+    this.editBlogCategories = initBlogCategories;
+    this.editBlogContent = initBlogContent;
   }
 
 }
