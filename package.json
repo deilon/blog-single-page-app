@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lightslider": "^1.1.6",
     "ngx-bootstrap": "^5.2.0",
     "ngx-ellipsis": "^2.1.2",
