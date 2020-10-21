@@ -7,6 +7,8 @@ import { UserLoginComponent } from './core/auth/user-login/user-login.component'
 import { NotFoundComponent } from './layout/not-found/not-found.component';
 
 
+import { LoggedInAuthGuard } from './core/service/loggedin-auth-guard.service';
+
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', loadChildren: () => import('./modules/public/home/home.module').then(m => m.HomeModule) },
@@ -14,7 +16,7 @@ const appRoutes: Routes = [
     { path: 'blog', loadChildren: () => import('./modules/public/blog/blog.module').then(m => m.BlogModule) },
     { path: 'profile', loadChildren: () => import('./modules/private/user/users.module').then(m => m.UsersModule) },
     { path: 'signup', component: UserRegistrationComponent },
-    { path: 'login', component: UserLoginComponent },
+    { path: 'login', component: UserLoginComponent, canActivate: [LoggedInAuthGuard] },
     { path: 'page-not-found', component: NotFoundComponent },
     { path: '**', redirectTo: 'page-not-found' }
 ];

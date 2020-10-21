@@ -8,6 +8,7 @@ import { UserLoginComponent } from './auth/user-login/user-login.component';
 import { BlogService } from 'src/app/data/service/blog.service';
 import { UserService } from 'src/app/data/service/user.service';
 import { AuthGuard } from './service/auth-guard.service';
+import { LoggedInAuthGuard } from './service/loggedin-auth-guard.service';
 import { AuthService } from './service/auth.service';
 import { DialogService } from 'src/app/shared/dialog/dialog.service';
 
@@ -27,6 +28,7 @@ import { DialogService } from 'src/app/shared/dialog/dialog.service';
     providers: [
         BlogService,
         AuthGuard,
+        LoggedInAuthGuard,
         AuthService,
         UserService,
         DialogService
